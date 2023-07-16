@@ -96,7 +96,7 @@ public class MainApplication {
         //System.out.println("Число" + data);
         if (data <= 10) {
             System.out.println("Красный");
-        } else if (data <= 20 && data >= 10) {
+        } else if (data <= 20) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
