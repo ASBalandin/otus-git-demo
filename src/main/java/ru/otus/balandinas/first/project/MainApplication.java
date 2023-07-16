@@ -40,7 +40,7 @@ public class MainApplication {
         do {
             System.out.println("Введите число 1 до 5");
             choice = scanner.nextInt();
-        } while (choice < 1 && choice > 5);
+        } while (choice < 1 || choice > 5);
         if (choice == 1) {
             greetings();
         } else if (choice == 2) {
@@ -96,7 +96,7 @@ public class MainApplication {
         //System.out.println("Число" + data);
         if (data <= 10) {
             System.out.println("Красный");
-        } else if (data >= 10 && data <= 20) {
+        } else if (data <= 20 && data >= 10) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
