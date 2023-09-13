@@ -38,7 +38,7 @@ public class MainApplication {
         System.out.println("----------(4)-----------");
         int[] arr3 = {1, 2, 7, 2, 8};
         int d1 = 7;
-        PlusEveryElArr(arr3, d1);
+        plusEveryElArr(arr3, d1);
         System.out.println("Массив after: " + Arrays.toString(arr3));
         System.out.println();
 
@@ -79,7 +79,7 @@ public class MainApplication {
 
     }
 
-    public static void PlusEveryElArr(int[] arr, int d) {
+    public static void plusEveryElArr(int[] arr, int d) {
         System.out.println("Массив before: " + Arrays.toString(arr));
         System.out.println(" + : " + d);
         for (int i = 0; i < arr.length; i++) {
