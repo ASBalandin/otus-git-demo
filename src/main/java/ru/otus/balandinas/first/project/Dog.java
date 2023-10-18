@@ -1,8 +1,9 @@
 package ru.otus.balandinas.first.project;
 
 public class Dog extends Animal {
-    public Dog(int run, int swim, int endur) {
+    public Dog(String name, int run, int swim, int endur) {
         System.out.println("-------- dog ----------");
+        this.name = name;
         this.runSpeed = run;
         this.swimSpead = swim;
         this.endurance = endur;
