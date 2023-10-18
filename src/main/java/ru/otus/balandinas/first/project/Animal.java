@@ -1,6 +1,7 @@
 package ru.otus.balandinas.first.project;
 
 public abstract class Animal {
+    String name;
     int runSpeed;
     int swimSpead;
     int endurance;
@@ -18,8 +19,8 @@ public abstract class Animal {
     }
 
     public void Info() {
-        System.out.println("Остаток выносивости : " + endurance
-        );
+        System.out.println("Имя : " + name);
+        System.out.println("Остаток выносивости : " + endurance);
     }
 
 }
