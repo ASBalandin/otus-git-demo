@@ -7,16 +7,17 @@ public class Horse extends Animal {
         this.runSpeed = run;
         this.swimSpead = swim;
         this.endurance = endur;
+        this.endurFactor = 4;
     }
 
-    public void Swim(int distance) {
+    public void swim(int distance) {
         System.out.println("Водные процедуры");
-        if (this.endurance - (distance*4) >= 0) {
-            this.endurance -= distance*4;
+        if (this.endurance - (distance*this.endurFactor) >= 0) {
+            this.endurance -= distance*this.endurFactor;
             System.out.println(String.format("Время : %f", (double) distance / this.swimSpead));
         } else {
             System.out.println("Время : -1");
-            System.out.println("Появилось усталость");
+            System.out.println("Появилась усталость");
         }
     }
 }
