@@ -11,18 +11,18 @@ public class Cat {
         this.satiety = false;
     }
 
-    public void eat(Plate plate){
-        if (plate.eat(appetite)){
+    public void eat(Plate plate) {
+        if (plate.eat(appetite)) {
             satiety = true;
         }
     }
 
-    public void  info() {
+    public void info() {
         if (satiety) {
-            System.out.println( name + " поел");
+            System.out.println(name + " поел");
             return;
         }
 
-        System.out.println( name + " голодный");
+        System.out.println(name + " голодный");
     }
 }

@@ -19,54 +19,14 @@ public class Plate {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public boolean eat(int count) {
 
         if (remainder - count >= 0) {
-          remainder -= count;
-          return true;
-      }
+            remainder -= count;
+            return true;
+        }
 
-      return false;
+        return false;
     }
 
 }
