@@ -1,8 +1,67 @@
 package ru.otus.balandinas.first.project;
 
 public class MainApplication {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
+    public static void main(String[] args) {
+        /*
+        Реализуйте классы:
+         Тарелка (максимальное количество еды, текущее количество еды)
+         Кот (имя, аппетит). Количество еды измеряем в условных единицах
+
+         При создании тарелки указывается ее объем и она полностью заполняется едой.
+         В тарелке должен быть метод, позволяющий добавить еду в тарелку.
+         После добавления в тарелке не может оказаться еды больше максимума.
+         В тарелке должен быть boolean метод уменьшения количества еды, при этом после такого уменьшения,
+         в тарелке не может оказаться отрицательное количество еды (если удалось уменьшить еду так,
+         чтобы в тарелке осталось >= 0 кусков еды, то возвращаем true, в противном случае - false).
+
+         Каждому коту нужно добавить поле сытость (когда создаем котов, они голодны).
+         Если коту удалось покушать (хватило еды), сытость = true.
+         Считаем, что если коту мало еды в тарелке, то он её просто не трогает,
+         то есть не может быть наполовину сыт (это сделано для упрощения логики программы).
+
+          Создать массив котов и тарелку с едой, попросить всех котов покушать из этой тарелки
+          и потом вывести информацию о сытости котов в консоль.
+        */
+
+        Plate plate = new Plate(50);
+
+        Cat[] cat = {
+                new Cat("кот1", 23)
+                , new Cat("кот2", 9)
+                , new Cat("кот3", 27)
+                , new Cat("кот4", 10)
+                , new Cat("кот5", 13)
+        };
+        System.out.println("Кормим котиков :)");
+        cat[0].eat(plate);
+        cat[2].eat(plate);
+        cat[1].eat(plate);
+        System.out.println("Пробуем добавить еды 100");
+        System.out.println();
+        plate.addFood(100);
+        plate.addFood(30);
+        System.out.println("\r\nПодсыпали еды 30");
+        System.out.println();
+        for (int i = 0; i < cat.length; i++) {
+            cat[i].info();
+        }
+        System.out.println();
+        cat[1].eat(plate);
+        cat[3].eat(plate);
+        cat[4].eat(plate);
+        System.out.println();
+        for (int i = 0; i < cat.length; i++) {
+            cat[i].info();
+        }
+        System.out.println();
+        plate.addFood(2);
+        System.out.println("Подсыпали еды 2");
+        cat[4].eat(plate);
+        System.out.println();
+        for (int i = 0; i < cat.length; i++) {
+            cat[i].info();
+        }
+
     }
 
 }
