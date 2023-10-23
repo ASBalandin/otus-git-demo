@@ -18,19 +18,19 @@ public class MainApplication {
         */
         Dog d = new Dog("bobik", 15, 5, 100);
         d.run(50);
-        d.Info();
-        d.Swim(10);
-        d.Info();
+        d.info();
+        d.swim(10);
+        d.info();
 
         Cat c = new Cat("murzik", 15, 100);
         c.run(50);
-        c.Info();
+        c.info();
 
         Horse h = new Horse("retiviy", 40, 2, 700);
         h.run(50);
-        h.Info();
-        h.Swim(10);
-        h.Info();
+        h.info();
+        h.swim(10);
+        h.info();
 
     }
 
