@@ -33,33 +33,33 @@ public class MainApplication {
                 , new Cat("кот5", 13)
         };
         System.out.println("Кормим котиков :)");
-        cat[0].Eat(plate);
-        cat[2].Eat(plate);
-        cat[1].Eat(plate);
+        cat[0].eat(plate);
+        cat[2].eat(plate);
+        cat[1].eat(plate);
         System.out.println("Пробуем добавить еды 100");
         System.out.println();
-        plate.AddFood(100);
-        plate.AddFood(30);
+        plate.addFood(100);
+        plate.addFood(30);
         System.out.println("\r\nПодсыпали еды 30");
         System.out.println();
         for (int i = 0; i < cat.length; i++) {
-            cat[i].Info();
+            cat[i].info();
         }
         System.out.println();
-        cat[1].Eat(plate);
-        cat[3].Eat(plate);
-        cat[4].Eat(plate);
+        cat[1].eat(plate);
+        cat[3].eat(plate);
+        cat[4].eat(plate);
         System.out.println();
         for (int i = 0; i < cat.length; i++) {
-            cat[i].Info();
+            cat[i].info();
         }
         System.out.println();
-        plate.AddFood(2);
+        plate.addFood(2);
         System.out.println("Подсыпали еды 2");
-        cat[4].Eat(plate);
+        cat[4].eat(plate);
         System.out.println();
         for (int i = 0; i < cat.length; i++) {
-            cat[i].Info();
+            cat[i].info();
         }
 
     }

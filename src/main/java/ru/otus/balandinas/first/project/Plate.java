@@ -9,7 +9,7 @@ public class Plate {
         this.remainder = volume;
     }
 
-    public void AddFood(int addCount) {
+    public void addFood(int addCount) {
 
         if (remainder + addCount < volume) {
             remainder += addCount;
@@ -19,7 +19,47 @@ public class Plate {
 
     }
 
-    public boolean Eat(int count) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public boolean eat(int count) {
 
         if (remainder - count >= 0) {
           remainder -= count;

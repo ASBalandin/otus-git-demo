@@ -11,13 +11,13 @@ public class Cat {
         this.satiety = false;
     }
 
-    public void Eat(Plate plate){
-        if (plate.Eat(appetite)){
+    public void eat(Plate plate){
+        if (plate.eat(appetite)){
             satiety = true;
         }
     }
 
-    public void  Info() {
+    public void  info() {
         if (satiety) {
             System.out.println( name + " поел");
             return;
