@@ -66,7 +66,12 @@ public class MainApplication {
         ));
         System.out.println(listNamesByListEmp(emp));
         System.out.println(listEmpOfAgeMoreOrEqualN(34, emp));
-        System.out.println(listEmpOfMinAVGAgeMoreOrEqualN(34, emp));
+        int ageAVG = 0;
+        for (int i = 0; i < emp.size(); i++) {
+            ageAVG +=  emp.get(i).getAge();
+        }
+        ageAVG = ageAVG / emp.size();
+        System.out.println(listEmpOfMinAVGAgeMoreOrEqualN(ageAVG, emp));
         System.out.println(listEmpOfMinAge(emp));
     }
 
@@ -103,11 +108,11 @@ public class MainApplication {
     }
 
     public static ArrayList<String> listNamesByListEmp(ArrayList<Employees> li) {
-        Employees emp;
+        //Employees emp;
         ArrayList<String> names = new ArrayList<>();
         for (int i = 0; i < li.size(); i++) {
-            emp = li.get(i);
-            names.add(emp.getName());
+           // emp = li.get(i);
+            names.add(li.get(i).getName());//emp.getName());
         }
         return names;
     }
@@ -125,30 +130,18 @@ public class MainApplication {
     }
 
     public static ArrayList<Employees> listEmpOfMinAVGAgeMoreOrEqualN(int n, ArrayList<Employees> li) {
-        int maxAVGAge = 0;
-        Employees emp;
         ArrayList<Employees> out = new ArrayList<>();
-        ArrayList<Employees> min = new ArrayList<>();
         for (int i = 0; i < li.size(); i++) {
-            emp = li.get(i);
-            if (emp.getAge() >= n) {
-                if (maxAVGAge < emp.getAge()) {
-                    maxAVGAge = emp.getAge();
-                }
-                out.add(emp);
+            if (li.get(i).getAge() > n) {
+                out.add(li.get(i));
             }
         }
-        for (int i = 0; i < out.size(); i++) {
-            emp = out.get(i);
-            if (emp.getAge() < maxAVGAge) {
-                min.add(emp);
-            }
-        }
-        return min;
+
+        return out;
     }
 
-    public static ArrayList<Employees> listEmpOfMinAge(ArrayList<Employees> li) {
-        Employees emp, empMin = new Employees(li.get(0).getName(),li.get(0).getAge());
+    public static Employees listEmpOfMinAge(ArrayList<Employees> li) {
+        Employees emp, empMin = li.get(0);
         ArrayList<Employees> out = new ArrayList<>();
         for (int i = 0; i < li.size(); i++) {
             emp = li.get(i);
@@ -156,7 +149,6 @@ public class MainApplication {
                 empMin = emp;
             }
         }
-        out.add(empMin);
-        return out;
+        return empMin;
     }
 }
