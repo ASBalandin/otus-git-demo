@@ -64,14 +64,18 @@ public class MainApplication {
                         , new Employees("emp4", 34)
                 }
         ));
+        System.out.println("---------------- listNamesByListEmp ----------------");
         System.out.println(listNamesByListEmp(emp));
+        System.out.println("---------------- listEmpOfAgeMoreOrEqualN ----------------");
         System.out.println(listEmpOfAgeMoreOrEqualN(34, emp));
         int ageAVG = 0;
         for (int i = 0; i < emp.size(); i++) {
-            ageAVG +=  emp.get(i).getAge();
+            ageAVG += emp.get(i).getAge();
         }
         ageAVG = ageAVG / emp.size();
-        System.out.println(listEmpOfMinAVGAgeMoreOrEqualN(ageAVG, emp));
+        System.out.println("---------------- listEmpOfMinAVGAgeMoreOrEqualN ----------------");
+        listEmpOfMinAVGAgeMoreOrEqualN(ageAVG, emp);
+        System.out.println("---------------- listEmpOfMinAge ----------------");
         System.out.println(listEmpOfMinAge(emp));
     }
 
@@ -111,7 +115,7 @@ public class MainApplication {
         //Employees emp;
         ArrayList<String> names = new ArrayList<>();
         for (int i = 0; i < li.size(); i++) {
-           // emp = li.get(i);
+            // emp = li.get(i);
             names.add(li.get(i).getName());//emp.getName());
         }
         return names;
@@ -129,15 +133,13 @@ public class MainApplication {
         return out;
     }
 
-    public static ArrayList<Employees> listEmpOfMinAVGAgeMoreOrEqualN(int n, ArrayList<Employees> li) {
-        ArrayList<Employees> out = new ArrayList<>();
+    public static void listEmpOfMinAVGAgeMoreOrEqualN(int n, ArrayList<Employees> li) {
+        System.out.println("n=" + n);
         for (int i = 0; i < li.size(); i++) {
             if (li.get(i).getAge() > n) {
-                out.add(li.get(i));
+                System.out.println(li.get(i));
             }
         }
-
-        return out;
     }
 
     public static Employees listEmpOfMinAge(ArrayList<Employees> li) {
