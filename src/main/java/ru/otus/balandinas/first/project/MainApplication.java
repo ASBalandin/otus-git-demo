@@ -7,7 +7,6 @@ public class MainApplication {
             , {"--7", "2", "3", "4"}
             , {"8", "0", "3", "4","5"}
             , {"8", "0", "3", "4"}
-            , {"8", "0", "3", "4"}
     };
     static int result, i, j;
     static String s;
@@ -31,8 +30,8 @@ public class MainApplication {
             if (array.length != 4 ) {
                 throw new ArrayIndexOutOfBoundsException();
             }
-            for (int k = 0; k < array.length; k++) {
-                if (array[k].length != 4 ) {
+            for ( j = 0; j < array.length; j++) {
+                if (array[j].length != 4 ) {
                     throw new ArrayIndexOutOfBoundsException();
                 }
             }
@@ -46,7 +45,7 @@ public class MainApplication {
             return true;
         } catch (ArrayIndexOutOfBoundsException ex) {
             throw new AppArraySizeException("Некорректная размерность массива, ожидаем 4х4, текущая "
-                    + arr[0].length + "x" + arr.length);
+                    + arr.length + "x" + arr[j].length );
         } catch (NumberFormatException ex1) {
             throw new AppArrayDataException("Ошибка преобразования элемента array[" + i + "][" + j + "] = " + s);
         }
