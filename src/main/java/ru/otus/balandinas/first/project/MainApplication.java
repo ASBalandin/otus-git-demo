@@ -4,8 +4,8 @@ public class MainApplication {
 
     static String[][] arr = {
             {"1", "-2", "3", "4"}
-            , {"--7", "2", "3", "4"}
-            , {"8", "0", "3", "4","5"}
+            , {"-7", "2", "3", "4"}
+            , {"8", "0", "3", "5"}
             , {"8", "0", "3", "4"}
     };
     static int result, i, j;
@@ -13,25 +13,23 @@ public class MainApplication {
 
     public static void main(String[] args) {
         try {
-
-            if (toIntAndSum(arr)) {
-                System.out.println("Результат : " + result);
-            }
+            toIntAndSum(arr);
+            System.out.println("Результат : " + result);
         } catch (Exception e) {
             System.out.println("Ошибка при выполнении : " + e);
         }
 
     }
 
-    public static boolean toIntAndSum(String[][] array) {
+    public static int toIntAndSum(String[][] array) {
         int total = 0;
 
         try {
-            if (array.length != 4 ) {
+            if (array.length != 4) {
                 throw new ArrayIndexOutOfBoundsException();
             }
-            for ( j = 0; j < array.length; j++) {
-                if (array[j].length != 4 ) {
+            for (j = 0; j < array.length; j++) {
+                if (array[j].length != 4) {
                     throw new ArrayIndexOutOfBoundsException();
                 }
             }
@@ -42,10 +40,10 @@ public class MainApplication {
                 }
             }
             result = total;
-            return true;
+            return total;
         } catch (ArrayIndexOutOfBoundsException ex) {
             throw new AppArraySizeException("Некорректная размерность массива, ожидаем 4х4, текущая "
-                    + arr.length + "x" + arr[j].length );
+                    + arr.length + "x" + arr[j].length);
         } catch (NumberFormatException ex1) {
             throw new AppArrayDataException("Ошибка преобразования элемента array[" + i + "][" + j + "] = " + s);
         }
