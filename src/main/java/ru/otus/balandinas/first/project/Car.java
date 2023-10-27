@@ -11,11 +11,11 @@ public class Car implements Transport {
 
     @Override
     public boolean move(int distanse, Terrain terrain, Transport currTransport) {
-        if (terrain == Terrain.plain && ((float) distanse / 100.0) * consumption <= fuelLevel) {
+        if (terrain == Terrain.PLAIN && ((float) distanse / 100.0) * consumption <= fuelLevel) {
             fuelLevel -= ((float) distanse / 100) * consumption;
             System.out.println(" в баке авто осталось " + fuelLevel);
             return true;
-        } else if (terrain == Terrain.plain) {
+        } else if (terrain == Terrain.PLAIN) {
             System.out.println("Авто не хватит топлива!");
         } else {
             System.out.println("Недопустимый для авто вид местности");

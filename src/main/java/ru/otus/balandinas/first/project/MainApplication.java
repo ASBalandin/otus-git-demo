@@ -37,15 +37,15 @@ public class MainApplication {
         ATVehicle atv = new ATVehicle(100.0f);
         Human human = new Human("Аноним", 30);
         human.setTransport(car);
-        human.move(130,Terrain.plain);
+        human.move(130,Terrain.PLAIN);
         human.setTransport(null);
-        human.move(130,Terrain.forest);
+        human.move(130,Terrain.FOREST);
         human.setTransport(bike);
-        human.move(130,Terrain.forest);
+        human.move(130,Terrain.FOREST);
         human.setTransport(horse);
-        human.move(130,Terrain.forest);
+        human.move(130,Terrain.FOREST);
         human.setTransport(atv);
-        human.move(100,Terrain.swamp);
+        human.move(100,Terrain.SWAMP);
 
     }
 
