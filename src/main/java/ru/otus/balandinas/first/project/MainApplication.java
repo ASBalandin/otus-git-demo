@@ -68,13 +68,9 @@ public class MainApplication {
         System.out.println(listNamesByListEmp(emp));
         System.out.println("---------------- listEmpOfAgeMoreOrEqualN ----------------");
         System.out.println(listEmpOfAgeMoreOrEqualN(34, emp));
-        int ageAVG = 0;
-        for (int i = 0; i < emp.size(); i++) {
-            ageAVG += emp.get(i).getAge();
-        }
-        ageAVG = ageAVG / emp.size();
+
         System.out.println("---------------- listEmpOfMinAVGAgeMoreOrEqualN ----------------");
-        listEmpOfMinAVGAgeMoreOrEqualN(ageAVG, emp);
+        listEmpOfMinAVGAgeMoreOrEqualN(30, emp);
         System.out.println("---------------- listEmpOfMinAge ----------------");
         System.out.println(listEmpOfMinAge(emp));
     }
@@ -134,12 +130,18 @@ public class MainApplication {
     }
 
     public static void listEmpOfMinAVGAgeMoreOrEqualN(int n, ArrayList<Employees> li) {
-        System.out.println("n=" + n);
+        System.out.println("n : " + n);
+        int ageAVG = 0;
         for (int i = 0; i < li.size(); i++) {
-            if (li.get(i).getAge() > n) {
-                System.out.println(li.get(i));
-            }
+            ageAVG += li.get(i).getAge();
         }
+        ageAVG = ageAVG / li.size();
+        System.out.println("Средний возраст сотрудников : " + ageAVG);
+            if (ageAVG > n) {
+                System.out.println("Средний возраст сотрудников больше заданного");
+            } else {
+                System.out.println("Средний возраст сотрудников меньше заданного");
+            }
     }
 
     public static Employees listEmpOfMinAge(ArrayList<Employees> li) {
