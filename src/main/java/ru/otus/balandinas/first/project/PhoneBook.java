@@ -5,30 +5,33 @@ import java.util.HashMap;
 import java.util.List;
 
 public class PhoneBook {
-    private Person person;
-    private ArrayList<String> l;
-    private HashMap<Person, List<String>> hashMap;
+    private HashMap<String, List<String>> phoneBook;
 
     public PhoneBook() {
-        hashMap = new HashMap<>();
+        phoneBook = new HashMap<>();
     }
 
-    public void add(String lName, String fName, String sName, ArrayList<String> tel) {
-        person = new Person(lName, fName, sName);
-        l = new ArrayList<>();
-        for (String number : tel) {
-            l.add(number);
+    public void add(String lName, String fName, String sName, String tel) {
+        String person = lName + fName + sName;
+        ArrayList<String> l = new ArrayList<>();
+        List<String> listNumbers;
+        if (phoneBook.containsKey(person)) {
+            listNumbers = phoneBook.get(person);
+            for (String number : listNumbers) {
+                l.add(number);
+            }
         }
-        hashMap.put(person, l);
+        l.add(tel);
+        phoneBook.put(person, l);
     }
 
     public void find(String lName, String fName, String sName) {
         List<String> listNumbers;
-        person = new Person(lName, fName, sName);
-        if (hashMap.containsKey(person)) {
-            listNumbers = hashMap.get(person);
+        String person = lName + fName + sName;
+        if (phoneBook.containsKey(person)) {
+            listNumbers = phoneBook.get(person);
             for (String number : listNumbers) {
-                System.out.println(person.toString() + " : " + number);
+                System.out.println("Номер : " + number );
             }
         } else {
             System.out.println("Запись не найдена");
@@ -36,7 +39,7 @@ public class PhoneBook {
     }
 
     public boolean containsPhoneNumber(String tel) {
-        for (List li : hashMap.values()) {
+        for (List li : phoneBook.values()) {
             if (li.contains(tel)) {
                 return true;
             }
