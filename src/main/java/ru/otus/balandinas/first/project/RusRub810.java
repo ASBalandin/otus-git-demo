@@ -39,7 +39,7 @@ public class RusRub810 implements Currency {
         System.out.println("mlr" + mod100000000); */
 
 
-        desc = new Thousands(code).getDescription(mod1000000000).toString() + " ";
+        desc = new Millions(code).getDescription(mod1000000000).toString() + " ";
 
         if (mod10 == 0 || mod10 > 4) {
             desc += ZERO_AND_OVER_FOUR_RUR;
