@@ -1,12 +1,9 @@
 package ru.otus.balandinas.first.project;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 public class MainApplication {
     public static void main(String[] args){
-
-        StringMapping s = new StringMapping(991950801.9378d, CurrencyCode.RUR);
+                                               //123991950801
+        StringMapping s = new StringMapping(68989.789d, CurrencyCode.RUR);
         System.out.println(s);
 
     }

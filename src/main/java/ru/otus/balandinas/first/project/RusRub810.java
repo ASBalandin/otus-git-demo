@@ -18,28 +18,10 @@ public class RusRub810 implements Currency {
 
     @Override
     public void description(long whole, int fraction, Currency currCurrency, CurrencyCode code) {
+
         int mod10 = (int) (whole % 10);
-        int mod100 = (int) (whole % 100);
-        int mod1000 = (int) (whole % 1000);
-        int mod10000 = (int) (whole % 10000);
-        int mod100000 = (int) (whole % 100000);
-        int mod1000000 = (int) (whole % 1000000);
-        int mod10000000 = (int) (whole % 10000000);
-        int mod100000000 = (int) (whole % 100000000);
-        int mod1000000000 = (int) (whole % 1000000000);
-/*
-        System.out.println("d " + mod10);
-        System.out.println("s " + mod100);
-        System.out.println("t " + mod1000);
-        System.out.println("dt " + mod10000);
-        System.out.println("st " + mod100000);
-        System.out.println("m " + mod1000000);
-        System.out.println("dm" + mod10000000);
-        System.out.println("sm" + mod100000000);
-        System.out.println("mlr" + mod100000000); */
 
-
-        desc = new Millions(code).getDescription(mod1000000000).toString() + " ";
+        desc = new Billions(code).getDescription(whole).toString() + " ";
 
         if (mod10 == 0 || mod10 > 4) {
             desc += ZERO_AND_OVER_FOUR_RUR;

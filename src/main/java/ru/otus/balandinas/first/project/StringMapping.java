@@ -22,6 +22,12 @@ public class StringMapping {
     }
 
     public String description(long whole, int fraction,  CurrencyCode code) {
+        System.out.println("Число : " + whole + "." + String.format("%02d", fraction));
+        if (whole / 1000000000 >= 1000)
+        {
+            desc = "Извините, число к преобразованию превышает 999 миллиардов. Используйте, пожалуйста, меньшую разрядность.";
+            return desc;
+        }
         if (code == CurrencyCode.RUR) {
             RusRub810 rub = new RusRub810(whole,fraction);
             rub.description(whole, fraction, rub, code);

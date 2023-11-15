@@ -25,7 +25,7 @@ public class Thousands extends Hundreds {
         int mod10 = mod1M % 10;
         /*System.out.println(mod1M);
         System.out.println(mod10K);*/
-        if (mod10 == 1) {
+        if (mod10 == 1 && mod1M == 1) {
 
             if (mod1M > 0) {
                 if (mod1M > 1){
@@ -37,10 +37,10 @@ public class Thousands extends Hundreds {
                 desc += " " + D1T;
             }
 
-        } else if (mod10 > 1 && mod10 < 4) {
+        } else if ((mod10 > 1 && mod10 <= 4) && (mod1M <= 4 /*|| mod1M > 19*/)) {
 
             if (mod1M > 0) {
-                if (mod1M > 1){
+                if (mod1M > 19){
                     desc += super.getDescription(mod1M - mod10) + " ";
                 }
                 Nineteen nineteen = new Nineteen(code);
@@ -49,7 +49,7 @@ public class Thousands extends Hundreds {
                 desc += " " + D2_4T;
             }
 
-        } else if (mod10 == 0 || mod10 > 4) {
+        } else if ((mod10 == 0 || mod10 > 4) ||  mod1M > 4) {
 
             if (mod1M > 0) {
 
@@ -60,7 +60,9 @@ public class Thousands extends Hundreds {
         }
 
         if (digit % 1000 > 0){
-            desc += " ";
+            if (desc.length() > 0) {
+                desc += " ";
+            }
             desc += super.getDescription(digit % 1000);
         }
         if (digit % 1000 == 0 && desc.length() == 0) {
