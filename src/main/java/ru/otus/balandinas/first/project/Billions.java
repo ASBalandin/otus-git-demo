@@ -1,6 +1,6 @@
 package ru.otus.balandinas.first.project;
 
-public class Billions extends Thousands {
+public class Billions extends Millions {
     private final String D1ML = "миллиард";
     private final String D2_4ML = "миллиарда";
     private final String D0_OVER4ML = "миллиардов";
