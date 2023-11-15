@@ -33,6 +33,11 @@ public class StringMapping {
             rub.description(whole, fraction, rub, code);
             desc = rub.toString();
         }
+        if (code == CurrencyCode.TRY) {
+            TurkishLira949 tl = new TurkishLira949(whole,fraction);
+            tl.description(whole, fraction, tl, code);
+            desc = tl.toString();
+        }
         return desc;
     }
 
