@@ -38,6 +38,7 @@ public class MainApplication {
             for (int i = 0; i < buffer.length; i++) {
                 out.write(buffer[i]);
             }
+            out.flush();
         }  catch (IOException e){
             e.printStackTrace();
         }
